@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity"
+      minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="400.0" prefWidth="600.0"
+      xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="de.kessel.Banking.BankingController">
+   <children>
+      <Button fx:id="csvImporter" layoutX="524.0" layoutY="22.0" mnemonicParsing="false" onAction="#openFileChooser" text="CSV" />
+   </children>
+</Pane>
