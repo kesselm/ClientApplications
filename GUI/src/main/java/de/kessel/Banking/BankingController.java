@@ -1,6 +1,6 @@
 package de.kessel.Banking;
 
-import de.kessel.apache.csv.CSVReader;
+import de.kessel.csvimporter.CSVReader;
 import de.kessel.entities.Transaction;
 import de.kessel.services.TransactionService;
 import javafx.stage.FileChooser;
@@ -9,8 +9,6 @@ import javafx.stage.Stage;;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -31,6 +29,7 @@ public class BankingController {
         File selectedFile = fileChooser.showOpenDialog(new Stage());
         if (selectedFile != null) {
             CSVReader csvReader = new CSVReader(selectedFile.getPath(), ";", true);
+            csvReader.setData(selectedFile.getPath());
             ArrayList<String[]> transactionList = csvReader.getTransactionList();
             for(String[] transaction : transactionList){
                 TransactionService transactionService = new TransactionService();
