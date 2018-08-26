@@ -4,8 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -136,11 +134,9 @@ public class JavaFXCSVTableView extends Application {
             }
 
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(JavaFXCSVTableView.class.getName())
-                    .log(Level.SEVERE, null, ex);
+
         } catch (IOException ex) {
-            Logger.getLogger(JavaFXCSVTableView.class.getName())
-                    .log(Level.SEVERE, null, ex);
+
         }
 
     }

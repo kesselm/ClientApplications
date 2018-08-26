@@ -1,5 +1,6 @@
 package de.kessel.dao;
 
+import de.kessel.HibernateUtil;
 import de.kessel.entities.Transaction;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -11,7 +12,7 @@ import java.util.List;
 
 public class TransactionDAO implements ITransactionDAO<Transaction, String> {
 
-    private static SessionFactory sessionFactory = buildSessionFactory();
+    private static SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 
     private Session currentSession;
 
@@ -40,7 +41,7 @@ public class TransactionDAO implements ITransactionDAO<Transaction, String> {
     }
 
     public Session openCurrentSession() {
-        currentSession = buildSessionFactory().getCurrentSession();
+        currentSession = sessionFactory.getCurrentSession();
         return currentSession;
     }
 

@@ -1,0 +1,3 @@
+2018-08-20 23:24:47 DEBUG [CSVReader:26] - This is debug[DEBUG: 2018-08-20 23:26:26 (CSVReader.java:26)] This is debug
+DEBUG - [This is debug                                                                   ] - at de.kessel.csvimporter.CSVReader.<init>(CSVReader.java:26)
+DEBUG - [This is debug                                                                   ] - at de.kessel.csvimporter.CSVReader.<init>(CSVReader.java:26)
