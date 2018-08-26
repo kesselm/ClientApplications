@@ -12,7 +12,7 @@ import java.util.List;
 
 public class TransactionDAO implements ITransactionDAO<Transaction, String> {
 
-    private static SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+    private static SessionFactory sessionFactory = buildSessionFactory();
 
     private Session currentSession;
 
@@ -41,7 +41,7 @@ public class TransactionDAO implements ITransactionDAO<Transaction, String> {
     }
 
     public Session openCurrentSession() {
-        currentSession = sessionFactory.getCurrentSession();
+        currentSession = buildSessionFactory().getCurrentSession();
         return currentSession;
     }
 

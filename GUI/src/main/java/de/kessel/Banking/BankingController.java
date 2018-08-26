@@ -1,6 +1,7 @@
 package de.kessel.Banking;
 
 import de.kessel.csvimporter.CSVReader;
+import de.kessel.entities.Transaction;
 import de.kessel.services.TransactionService;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;;
@@ -45,9 +46,9 @@ public class BankingController {
                 BigDecimal saldo = new BigDecimal(transaction[4].replace(',','.'));
                 BigDecimal betrag = new BigDecimal(transaction[5].replace(',','.'));
 
-                //Transaction trans= new Transaction(date, transaction[1],transaction[2], transaction[3], saldo , betrag, transaction[6]);
+                Transaction trans= new Transaction(date, transaction[1],transaction[2], transaction[3], saldo , betrag, transaction[6]);
                 System.out.println("date: " + date + ", saldo: " + saldo);
-                //transactionService.persist(trans);
+                transactionService.persist(trans);
 
             }
 
